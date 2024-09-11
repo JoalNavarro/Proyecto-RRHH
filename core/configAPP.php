@@ -3,7 +3,7 @@
 	|  Datos del servidor - Data of the server  |
 	===========================================*/
 	const SERVER="localhost";
-	const DB="spv";
+	const DB="softpersonal";
 	const USER='root';
 	const PASS="";
 

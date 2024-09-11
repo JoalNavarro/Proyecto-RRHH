@@ -7,7 +7,7 @@
 		<div class="form-group label-floating">
 		  <label class="control-label" for="loginUserName">Nombre de usuario</label>
 		  <input class="form-control" id="loginUserName" type="text" name="loginUserName">
-		  <p class="help-block">Escribe tú Usuario</p>
+		  <p class="help-block">Escribe tú User</p>
 		</div>
 		<div class="form-group label-floating">
 		  <label class="control-label" for="loginUserPass">Contraseña</label>

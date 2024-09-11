@@ -1,5 +1,5 @@
 <?php
-	const SERVERURL = "http://localhost/SPV/";
+	const SERVERURL = "http://localhost/Proyecto-RRHH/";
 
 	const COMPANY = "SPV";
 
