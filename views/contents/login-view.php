@@ -12,7 +12,7 @@
 		<div class="form-group label-floating">
 		  <label class="control-label" for="loginUserPass">Contraseña</label>
 		  <input class="form-control" id="loginUserPass" type="password" name="loginUserPass">
-		  <p class="help-block">Escribe tú contraseña</p>
+		  <p class="help-block">Escribe tú clave</p>
 		</div>
 		<div class="form-group text-center">
 			<input type="submit" value="Iniciar sesión" class="btn btn-raised btn-info">
