@@ -39,19 +39,34 @@
 			</li>
 			<li>
 				<a href="#!" class="btn-sideBar-SubMenu">
-					<i class="zmdi zmdi-account zmdi-hc-fw"></i> Administradores <i class="zmdi zmdi-caret-down pull-right"></i>
+					<i class="zmdi zmdi-account zmdi-hc-fw"></i> Gestión de Personal <i class="zmdi zmdi-caret-down pull-right"></i>
 				</a>
 				<ul class="list-unstyled full-box">
 					<li>
 						<a href="<?php echo SERVERURL; ?>admin/">
-							<i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Nuevo
+							<i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Ingreso Personal
 						</a>
 					</li>
 					<li>
 						<a href="<?php echo SERVERURL; ?>adminlist/">
-							<i class="zmdi zmdi-accounts zmdi-hc-fw"></i> Listado
+							<i class="zmdi zmdi-accounts zmdi-hc-fw"></i> Parientes
 						</a>
 					</li>
+					<li>
+						<a href="<?php echo SERVERURL; ?>adminlist/">
+							<i class="zmdi zmdi-accounts zmdi-hc-fw"></i> Dcto Judicial
+						</a>
+					</li>
+					<li>
+						<a href="<?php echo SERVERURL; ?>adminlist/">
+							<i class="zmdi zmdi-accounts zmdi-hc-fw"></i> Datos Adicionales
+						</a>
+					</li>
+					<li>
+						<a href="<?php echo SERVERURL; ?>adminlist/">
+							<i class="zmdi zmdi-accounts zmdi-hc-fw"></i> Reportes
+						</a>
+					</li>															
 				</ul>
 			</li>
 			<li>
