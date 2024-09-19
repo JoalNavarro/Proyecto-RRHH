@@ -32,12 +32,12 @@
 	</ul>
 </div>
 <?php 
-	require_once "./controllers/adminController.php";
+	require_once "./controllers/empleadoController.php";
 
-	$insAdmin = new adminController();
+	$insEmpleado = new empleadoController();
 
 	if(isset($_POST['name']) && isset($_POST['username'])){
-		echo $insAdmin->add_admin_controller();
+		echo $insEmpleado->add_empleado_controller();
 	}
 ?>
 <div class="container-fluid">
@@ -56,7 +56,7 @@
 				    				<div class="col-xs-12 col-sm-6">
 								    	<div class="form-group label-floating">
 										  	<label class="control-label">Código Trabajador *</label>
-										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,20}" class="form-control" type="text" name="name" value="<?php if(isset($_POST['name'])){ echo $_POST['name']; } ?>" required="" maxlength="20">
+										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,20}" class="form-control" type="text" name="cod_empl" value="<?php if(isset($_POST['cod_empl'])){ echo $_POST['cod_empl']; } ?>" required="" maxlength="20">
 										</div>
 				    				</div>
 				    			</div>
@@ -66,10 +66,10 @@
 				    				<div class="col-xs-12 col-sm-6">
 									<div class="form-group label-floating">
 										  	<label class="control-label">Tipo de Documento</label>
-										  	<select name="gender" class="form-control">
+										  	<select name="tip_docu" class="form-control">
 										  		<?php 
-										  			if(isset($_POST['gender'])){ 
-										  				echo '<option value="'.$_POST['gender'].'">'.$_POST['gender'].' Actual</option>'; 
+										  			if(isset($_POST['tip_docu'])){ 
+										  				echo '<option value="'.$_POST['tip_docu'].'">'.$_POST['tip_docu'].' Actual</option>'; 
 										  			} 
 										  		?>
 									          	<option value="DNI">DNI</option>
@@ -81,7 +81,7 @@
 				    				<div class="col-xs-12 col-sm-6">
 										<div class="form-group label-floating">
 										  	<label class="control-label">Nro. Documento *</label>
-										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,20}" class="form-control" type="text" name="lastname" value="<?php if(isset($_POST['lastname'])){ echo $_POST['lastname']; } ?>" required="" maxlength="20">
+										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,20}" class="form-control" type="text" name="nro_docu" value="<?php if(isset($_POST['nro_docu'])){ echo $_POST['nro_docu']; } ?>" required="" maxlength="20">
 										</div>
 				    				</div>
 				    			</div>
@@ -91,19 +91,19 @@
 									<div class="col-xs-12 col-sm-4">
 								    	<div class="form-group label-floating">
 										  	<label class="control-label">Nombres *</label>
-										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="name" value="<?php if(isset($_POST['name'])){ echo $_POST['name']; } ?>" required="" maxlength="50">
+										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="nom_empl" value="<?php if(isset($_POST['nom_empl'])){ echo $_POST['nom_empl']; } ?>" required="" maxlength="50">
 										</div>
 									</div>								
 				    				<div class="col-xs-12 col-sm-4">
 								    	<div class="form-group label-floating">
 										  	<label class="control-label">Ape. Paterno *</label>
-										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="name" value="<?php if(isset($_POST['name'])){ echo $_POST['name']; } ?>" required="" maxlength="50">
+										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="ape_pate" value="<?php if(isset($_POST['ape_pate'])){ echo $_POST['ape_pate']; } ?>" required="" maxlength="50">
 										</div>
 				    				</div>
 				    				<div class="col-xs-12 col-sm-4">
 										<div class="form-group label-floating">
 										  	<label class="control-label">Ape. Materno *</label>
-										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="lastname" value="<?php if(isset($_POST['lastname'])){ echo $_POST['lastname']; } ?>" required="" maxlength="50">
+										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="ape_mate" value="<?php if(isset($_POST['ape_mate'])){ echo $_POST['ape_mate']; } ?>" required="" maxlength="50">
 										</div>
 				    				</div>
 				    			</div>
@@ -113,10 +113,10 @@
 				    				<div class="col-xs-12 col-sm-4">
 										<div class="form-group label-floating">
 										  	<label class="control-label">Género</label>
-										  	<select name="gender" class="form-control">
+										  	<select name="sex_empl" class="form-control">
 										  		<?php 
-										  			if(isset($_POST['gender'])){ 
-										  				echo '<option value="'.$_POST['gender'].'">'.$_POST['gender'].' Actual</option>'; 
+										  			if(isset($_POST['sex_empl'])){ 
+										  				echo '<option value="'.$_POST['sex_empl'].'">'.$_POST['sex_empl'].' Actual</option>'; 
 										  			} 
 										  		?>
 									          	<option value="Femenino">Femenino</option>
@@ -127,10 +127,10 @@
 				    				<div class="col-xs-12 col-sm-4">
 										<div class="form-group label-floating">
 										  	<label class="control-label">Estado Civil</label>
-										  	<select name="gender" class="form-control">
+										  	<select name="est_civi" class="form-control">
 										  		<?php 
-										  			if(isset($_POST['gender'])){ 
-										  				echo '<option value="'.$_POST['gender'].'">'.$_POST['gender'].' Actual</option>'; 
+										  			if(isset($_POST['est_civi'])){ 
+										  				echo '<option value="'.$_POST['est_civi'].'">'.$_POST['est_civi'].' Actual</option>'; 
 										  			} 
 										  		?>
 									          	<option value="Soltero">Soltero</option>
@@ -141,10 +141,10 @@
 				    				<div class="col-xs-12 col-sm-4">
 										<div class="form-group label-floating">
 										  	<label class="control-label">Instrucción</label>
-										  	<select name="gender" class="form-control">
+										  	<select name="gra_acad" class="form-control">
 										  		<?php 
-										  			if(isset($_POST['gender'])){ 
-										  				echo '<option value="'.$_POST['gender'].'">'.$_POST['gender'].' Actual</option>'; 
+										  			if(isset($_POST['gra_acad'])){ 
+										  				echo '<option value="'.$_POST['gra_acad'].'">'.$_POST['gra_acad'].' Actual</option>'; 
 										  			} 
 										  		?>
 									          	<option value="Primaria">Primaria</option>
@@ -159,19 +159,19 @@
 									<div class="col-xs-12 col-sm-4">
 								    	<div class="form-group label-floating">
 										  	<label class="control-label">Fecha Nacimiento *</label>
-										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="name" value="<?php if(isset($_POST['name'])){ echo $_POST['name']; } ?>" required="" maxlength="50">
+										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="fec_naci" value="<?php if(isset($_POST['fec_naci'])){ echo $_POST['fec_naci']; } ?>" required="" maxlength="50">
 										</div>
 									</div>								
 				    				<div class="col-xs-12 col-sm-4">
 								    	<div class="form-group label-floating">
 										  	<label class="control-label">Lugar de Nacimiento *</label>
-										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="name" value="<?php if(isset($_POST['name'])){ echo $_POST['name']; } ?>" required="" maxlength="50">
+										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="lug_naci" value="<?php if(isset($_POST['lug_naci'])){ echo $_POST['lug_naci']; } ?>" required="" maxlength="50">
 										</div>
 				    				</div>
 				    				<div class="col-xs-12 col-sm-4">
 										<div class="form-group label-floating">
 										  	<label class="control-label">País *</label>
-										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="lastname" value="<?php if(isset($_POST['lastname'])){ echo $_POST['lastname']; } ?>" required="" maxlength="50">
+										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="pai_naci" value="<?php if(isset($_POST['pai_naci'])){ echo $_POST['pai_naci']; } ?>" required="" maxlength="50">
 										</div>
 				    				</div>
 				    			</div>
@@ -181,22 +181,22 @@
 									<div class="col-xs-12 col-sm-4">
 								    	<div class="form-group label-floating">
 										  	<label class="control-label">Dirección *</label>
-										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="name" value="<?php if(isset($_POST['name'])){ echo $_POST['name']; } ?>" required="" maxlength="50">
+										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="des_dire" value="<?php if(isset($_POST['des_dire'])){ echo $_POST['des_dire']; } ?>" required="" maxlength="50">
 										</div>
 									</div>								
 				    				<div class="col-xs-12 col-sm-4">
 								    	<div class="form-group label-floating">
 										  	<label class="control-label">Nro *</label>
-										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="name" value="<?php if(isset($_POST['name'])){ echo $_POST['name']; } ?>" required="" maxlength="50">
+										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="nro_dire" value="<?php if(isset($_POST['nro_dire'])){ echo $_POST['nro_dire']; } ?>" required="" maxlength="50">
 										</div>
 				    				</div>
 				    				<div class="col-xs-12 col-sm-4">
 										<div class="form-group label-floating">
 										  	<label class="control-label">Zona</label>
-										  	<select name="gender" class="form-control">
+										  	<select name="des_zona" class="form-control">
 										  		<?php 
-										  			if(isset($_POST['gender'])){ 
-										  				echo '<option value="'.$_POST['gender'].'">'.$_POST['gender'].' Actual</option>'; 
+										  			if(isset($_POST['des_zona'])){ 
+										  				echo '<option value="'.$_POST['des_zona'].'">'.$_POST['des_zona'].' Actual</option>'; 
 										  			} 
 										  		?>
 									          	<option value="Cooperativa">Cooperativa</option>
@@ -211,10 +211,10 @@
 				    				<div class="col-xs-12 col-sm-6">
 										<div class="form-group label-floating">
 										  	<label class="control-label">Régimen Pensionario</label>
-										  	<select name="gender" class="form-control">
+										  	<select name="reg_pens" class="form-control">
 										  		<?php 
-										  			if(isset($_POST['gender'])){ 
-										  				echo '<option value="'.$_POST['gender'].'">'.$_POST['gender'].' Actual</option>'; 
+										  			if(isset($_POST['reg_pens'])){ 
+										  				echo '<option value="'.$_POST['reg_pens'].'">'.$_POST['reg_pens'].' Actual</option>'; 
 										  			} 
 										  		?>
 									          	<option value="ONP">ONP</option>
@@ -225,7 +225,7 @@
 				    				<div class="col-xs-12 col-sm-6">
 								    	<div class="form-group label-floating">
 										  	<label class="control-label">Nro CUPS *</label>
-										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="name" value="<?php if(isset($_POST['name'])){ echo $_POST['name']; } ?>" required="" maxlength="50">
+										  	<input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,50}" class="form-control" type="text" name="nro_cups" value="<?php if(isset($_POST['nro_cups'])){ echo $_POST['nro_cups']; } ?>" required="" maxlength="50">
 										</div>
 				    				</div>								
 				    			</div>
